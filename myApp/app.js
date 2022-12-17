@@ -6,6 +6,7 @@ var alert= require('alert');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flag = false;
+const PORT = process.env.PORT || 3030;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -231,4 +232,6 @@ app.post('/search',function(req,res){
 
 
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
