@@ -134,99 +134,113 @@ app.post('/', function(req, res){
 app.post('/inca',function(req,res){
     if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Inca Trail to Machu Picchu"))){
       req.session.user.wantgo.push("Inca Trail to Machu Picchu");
+      req.session.save();
+
       db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
       db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+        req.session.user.wantgo = result.wantgo;
         req.session.user=result;
         req.session.save();
       });
-     res.redirect('/inca');
     }
     else{
       alert('This destination is already on your Want-To-Go List');
-      res.redirect('/inca');
     }
+    res.redirect('/inca');
 });
 app.post('/annapurna',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Annapurna Circuit"))){
     req.session.user.wantgo.push("Annapurna Circuit");
+    req.session.save();
+
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
     db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+      req.session.user.wantgo = result.wantgo;
       req.session.user=result;
       req.session.save();
     });
-   res.redirect('/annapurna');
   }
   else{
     alert('This destination is already on your Want-To-Go List');
-    res.redirect('/annapurna');
   }
+  res.redirect('/annapurna');
 });
 app.post('/bali',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Bali Island"))){
     req.session.user.wantgo.push("Bali Island");
+    req.session.save();
+
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
     db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+      req.session.user.wantgo = result.wantgo;
       req.session.user=result;
       req.session.save();
     });
-   res.redirect('/bali');
   }
   else{
     alert('This destination is already on your Want-To-Go List');
-    res.redirect('/bali');
   }
+  res.redirect('/bali');
 });
 app.post('/santorini',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Santorini Island"))){
     req.session.user.wantgo.push("Santorini Island");
+    req.session.save();
+
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
     db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+      req.session.user.wantgo = result.wantgo;
       req.session.user=result;
       req.session.save();
     });
-   res.redirect('/santorini');
   }
   else{
-    alert('This destination is already on your Want-To-Go List');
-    res.redirect('/santorini');
+    alert('This destination is already on your Want-To-Go List'); 
   }
+  res.redirect('/santorini');
 });
 app.post('/paris',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Paris"))){
     req.session.user.wantgo.push("Paris");
+    req.session.save();
+
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
     db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+      req.session.user.wantgo = result.wantgo;
       req.session.user=result;
       req.session.save();
     });
-   res.redirect('/paris');
   }
   else{
     alert('This destination is already on your Want-To-Go List');
-    res.redirect('/paris');
   }
+  res.redirect('/paris');
 });
 app.post('/rome',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Rome"))){
     req.session.user.wantgo.push("Rome");
+    req.session.save();
+
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
+
     db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
+      req.session.user.wantgo = result.wantgo;
       req.session.user=result;
       req.session.save();
     });
-   res.redirect('/rome');
   }
   else{
-    alert('This destination is already on your Want-To-Go List');
-    res.redirect('/rome');
+    alert('This destination is already on your Want-To-Go List'); 
   }
+  res.redirect('/rome');
 });
 app.post('/search',function(req,res){
     searchTerm = req.body.Search;
-    /*if(isEmpty(searchTerm))
-    {
-      res.redirect('back');
-    }*/
     res.redirect('/searchresults');
 });
 
