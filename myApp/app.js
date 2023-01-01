@@ -135,14 +135,7 @@ app.post('/inca',function(req,res){
     if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Inca Trail to Machu Picchu"))){
       req.session.user.wantgo.push("Inca Trail to Machu Picchu");
       req.session.save();
-
       db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
-
-      db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-        req.session.user.wantgo = result.wantgo;
-        req.session.user=result;
-        req.session.save();
-      });
     }
     else{
       alert('This destination is already on your Want-To-Go List');
@@ -153,14 +146,8 @@ app.post('/annapurna',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Annapurna Circuit"))){
     req.session.user.wantgo.push("Annapurna Circuit");
     req.session.save();
-
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
 
-    db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-      req.session.user.wantgo = result.wantgo;
-      req.session.user=result;
-      req.session.save();
-    });
   }
   else{
     alert('This destination is already on your Want-To-Go List');
@@ -171,14 +158,7 @@ app.post('/bali',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Bali Island"))){
     req.session.user.wantgo.push("Bali Island");
     req.session.save();
-
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
-
-    db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-      req.session.user.wantgo = result.wantgo;
-      req.session.user=result;
-      req.session.save();
-    });
   }
   else{
     alert('This destination is already on your Want-To-Go List');
@@ -189,14 +169,7 @@ app.post('/santorini',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Santorini Island"))){
     req.session.user.wantgo.push("Santorini Island");
     req.session.save();
-
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
-
-    db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-      req.session.user.wantgo = result.wantgo;
-      req.session.user=result;
-      req.session.save();
-    });
   }
   else{
     alert('This destination is already on your Want-To-Go List'); 
@@ -207,14 +180,7 @@ app.post('/paris',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Paris"))){
     req.session.user.wantgo.push("Paris");
     req.session.save();
-
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
-
-    db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-      req.session.user.wantgo = result.wantgo;
-      req.session.user=result;
-      req.session.save();
-    });
   }
   else{
     alert('This destination is already on your Want-To-Go List');
@@ -225,14 +191,7 @@ app.post('/rome',function(req,res){
   if((req.session.user.wantgo.length === 0) || !(req.session.user.wantgo.includes("Rome"))){
     req.session.user.wantgo.push("Rome");
     req.session.save();
-
     db.collection("myCollection").updateOne({username:req.session.user.username},{$set:{wantgo:req.session.user.wantgo}});
-
-    db.collection("myCollection").findOne({username: req.session.user.username},(err,result)=>{
-      req.session.user.wantgo = result.wantgo;
-      req.session.user=result;
-      req.session.save();
-    });
   }
   else{
     alert('This destination is already on your Want-To-Go List'); 
