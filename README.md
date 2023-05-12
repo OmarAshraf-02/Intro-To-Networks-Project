@@ -1,3 +1,3 @@
-Website made for the Intro to Communication Networks Course at the GUC. A website created with Node.js as well as frameworks such as ExpressJS, Express Sessions, Alerts as well as EJS.
-First Javascript project personally.
+Website made for the Intro to Communication Networks Course at the GUC. A website created with Node.js as well ExpressJS and Express Sessions
+First Javascript project.
 A basic version was also deployed using Render
